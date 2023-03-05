@@ -1,0 +1,91 @@
+@import "./reset.css";
+
+:root {
+  /* Brand Color Deconstructed */
+  --brand-hue: 180;
+  --brand-saturation: 100%;
+  --brand-lightness: 50%;
+
+  /* Brand Color */
+  --brand-light: hsl(
+    var(--brand-hue) var(--brand-saturation) var(--brand-lightness)
+  );
+
+  /* Light Text Colors */
+  --text-light-primary: hsl(var(--brand-hue) var(--brand-saturation) 10%);
+  --text-light-secondary: hsl(var(--brand-hue) 30% 30%);
+
+  /* Light Surface Colors */
+  --surface-light-primary: hsl(var(--brand-hue) 25% 90%);
+  --surface-light-secondary: hsl(var(--brand-hue) 25% 85%);
+  --surface-light-darkened: hsl(var(--brand-hue) 20% 80%);
+  --surface-light-brightened: hsl(var(--brand-hue) 30% 95%);
+
+  /* Light Shadows */
+  --shadow-light: var(--brand-hue) 10% calc(var(--brand-lightness) / 5);
+  --shadow-strength-light: 0.04;
+
+  /* Dark Brand */
+  --brand-dark: hsl(
+    var(--brand-hue) calc(var(--brand-saturation) / 2)
+      calc(var(--brand-lightness) / 1.5)
+  );
+
+  /* Dark Text Colors*/
+  --text-dark-primary: hsl(var(--brand-hue) 15% 90%);
+  --text-dark-secondary: hsl(var(--brand-hue) 5% 75%);
+
+  /* Dark Surface Colors */
+  --surface-dark-primary: hsl(var(--brand-hue) 10% 15%);
+  --surface-dark-secondary: hsl(var(--brand-hue) 10% 20%);
+  --surface-dark-darkened: hsl(var(--brand-hue) 10% 5%);
+  --surface-dark-brightened: hsl(var(--brand-hue) 5% 20%);
+
+  /* Dark Shadows */
+  --shadow-dark: var(--brand-hue) 50% 3%;
+  --shadow-strength-dark: 0.8;
+
+  /* Base Color Scheme */
+  color-scheme: light;
+
+  --brand: var(--brand-light);
+  --text-primary: var(--text-light-primary);
+  --text-secondary: var(--text-light-secondary);
+  --surface-primary: var(--surface-light-primary);
+  --surface-secondary: var(--surface-light-secondary);
+  --surface-darkened: var(--surface-light-darkened);
+  --surface-brightened: var(--surface-light-brightened);
+  --surface-shadow: var(--shadow-light);
+  --shadow-strength: var(--shadow-strength-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --brand: var(--brand-dark);
+    --text-primary: var(--text-dark-primary);
+    --text-secondary: var(--text-dark-secondary);
+    --surface-primary: var(--surface-dark-primary);
+    --surface-secondary: var(--surface-dark-secondary);
+    --surface-darkened: var(--surface-dark-darkened);
+    --surface-brightened: var(--surface-dark-brightened);
+    --surface-shadow: var(--shadow-dark);
+    --shadow-strength: var(--shadow-strength-dark);
+  }
+}
+
+.shadow {
+  box-shadow: 0 calc(2.8px / 2) calc(2.2px / 2)
+      hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.03)),
+    0 calc(6.7px / 2) calc(5.3px / 2)
+      hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.01)),
+    0 calc(12.5px / 2) calc(10px / 2)
+      hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.02)),
+    0 calc(22.3px / 2) calc(17.9px / 2)
+      hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.02)),
+    0 calc(41.8px / 2) calc(33.4px / 2)
+      hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.03)),
+    0 calc(100px / 2) calc(80px / 2)
+      hsl(var(--surface-shadow) / var(--shadow-strength));
+}
