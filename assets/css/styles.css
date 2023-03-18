@@ -1,4 +1,5 @@
 @import "./reset.css";
+@import "./variables/transitions.css";
 
 :root {
   /* Brand Color Deconstructed */
@@ -25,6 +26,9 @@
   --shadow-light: var(--brand-hue) 10% calc(var(--brand-lightness) / 5);
   --shadow-strength-light: 0.04;
 
+  /* Hover Accent */
+  --hover-accent-light: hsl(var(--brand-hue) 5% 70%);
+
   /* Dark Brand */
   --brand-dark: hsl(
     var(--brand-hue) calc(var(--brand-saturation) / 2)
@@ -42,8 +46,11 @@
   --surface-dark-brightened: hsl(var(--brand-hue) 5% 20%);
 
   /* Dark Shadows */
-  --shadow-dark: var(--brand-hue) 50% 3%;
+  --shadow-dark: var(--brand-hue) 50% 1%;
   --shadow-strength-dark: 0.8;
+
+  /* Hover Accent */
+  --hover-accent-dark: hsl(var(--brand-hue) 5% 30%);
 
   /* Base Color Scheme */
   color-scheme: light;
@@ -57,6 +64,7 @@
   --surface-brightened: var(--surface-light-brightened);
   --surface-shadow: var(--shadow-light);
   --shadow-strength: var(--shadow-strength-light);
+  --hover-accent: var(--hover-accent-light);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -72,6 +80,7 @@
     --surface-brightened: var(--surface-dark-brightened);
     --surface-shadow: var(--shadow-dark);
     --shadow-strength: var(--shadow-strength-dark);
+    --hover-accent: var(--hover-accent-dark);
   }
 }
 

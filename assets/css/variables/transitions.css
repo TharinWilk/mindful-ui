@@ -1,0 +1,15 @@
+/* transition speed */
+
+/* :root {
+  --fast-transition: 0.1s;
+  --moderate-transition: 0.25s;
+  --slow-transition: 0.5s;
+}
+
+@media (prefers-reduce-motion: reduce) {
+  :root {
+    --fast-transition: 0s;
+    --moderate-transition: 0s;
+    --slow-transition: 0s;
+  }
+} */

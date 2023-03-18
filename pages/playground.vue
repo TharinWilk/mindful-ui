@@ -19,6 +19,10 @@
       </div>
     </section>
     <div class="brand"></div>
+
+    <section>
+      <Checkbox />
+    </section>
   </main>
 </template>
 
